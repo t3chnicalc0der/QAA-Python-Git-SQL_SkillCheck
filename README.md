@@ -5,4 +5,4 @@ This could include installation instructions, file configurations, SQL table ins
 
 This should also include any evidence of testing or linting being done on the code base. 
 
-![Diagram showing App structure](https://imgur.com/a/yIEGp56)
+![Diagram showing App structure](https://imgur.com/bE6s9r5.png)
