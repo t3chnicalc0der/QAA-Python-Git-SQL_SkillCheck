@@ -1,10 +1,22 @@
-# The controller contains functions that takes in data (such as Order Strings or ids) 
-# and run the functions in the Service Object that interact with the DB
-# The controller will typically convert String data into Order Objects that can be used with the Service functions
+# The controller acts as the API for the app, in this case it will exist as a terminal based app
+# using inputs and if statements to specify what the app should do
 
-# The controller sends and collects data from the Service file, and pushes this data to the Runner which can display said data
+# It will run commands from the service file, which in turn uses the DB file to 
+# query and create data and will return the data back to the user
 
-# Not complete, but a suggestion of the process
-def read_by_id(id):
-    order = service.read_by_id(id)
-    return order
+from service import *
+
+print(
+    """
+    Welcome to the QA Cafe, what would you like to do? 
+
+    1. Create an order
+    2. Read an order
+    3. Read all Orders
+    4. Update an order
+    5. Delete an order
+    6. Delete all orders
+    """
+)
+
+print(service.getAll())
