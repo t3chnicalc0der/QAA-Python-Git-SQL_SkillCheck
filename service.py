@@ -5,3 +5,6 @@
 def read_by_id(id):
     order_data = db.query(id)
     order = order(order_data) 
+    
+def create_order(drink_name, customer, size, quantity):
+    order = Order(drink_name, customer..)
