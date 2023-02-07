@@ -3,14 +3,21 @@
 # When testing you should be using a TEST_DB, to easily do this modify the db.py so it is using a new DB
 # When testing on a test_db you should automatically reset the DB after testing and populate it with some data before testing
 
-def test_read_by_id():
+from controller import *
+from service import *
+
+def test_createOrder(mocker):
+    test_data = "Order received :)"
     # Arrange - Variables and values needed for the test
-    test_id = 1
-    result = None
-    expected = Order("test name", "test mocha", False, 1.23)
+    test_customer_name = 'Dave'
+    test_drink_type = 'Coffee'
+    test_drink_size = 'Large'
+    test_extras = 'No'
+    test_price = 1.00
+    mocker.patch("service.enterOrder", return_value=test_data)
 
     # Act - What you are testing 
-    result = controller.read_by_id(test_id)
+    result = service.enterOrder(test_customer_name, test_drink_type, test_drink_size, test_extras, test_price)
 
     # Assert - Asserting whether what you assume happens, does happen
-    assert result == expected
+    assert result == test_data
