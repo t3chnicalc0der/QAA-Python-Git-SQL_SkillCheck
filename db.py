@@ -2,6 +2,7 @@
 # The DB file should also contain query functions that the Service file can use to read or modify the data
 
 import sqlite3 as sql
+from service import update_query
 
 #func same as runnning conn = sql.connect("test_db")
 
@@ -18,7 +19,9 @@ def runQuery(query):
     return data
 
 def commitChanges():
-    conn.commit()
+        runQuery(update_query)
+
+conn.commit()
 
 
 # Uncomment this and run the file once to set up the DB
